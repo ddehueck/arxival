@@ -170,10 +170,12 @@ aside {
 
 aside #mobile-exit {
 	display: none;
+	cursor: pointer;
 }
 
 aside a#mobile-nav-click {
 	display: none;
+	cursor: pointer;
 }
 
 aside .subject-list ul {
@@ -218,6 +220,7 @@ aside .subject-list ul li {
 		height: 8px;
 		border-radius: 4px;
 		transition: 0.4s;
+		cursor: pointer;
 	}
 
 	aside a#mobile-nav-click {
@@ -249,6 +252,7 @@ aside .subject-list ul li {
 
 	aside.mobile-viewable-nav a#mobile-nav-click {
 		display: none;
+		cursor: pointer;
 	}
 
 	aside.mobile-viewable-nav #mobile-exit {
@@ -265,6 +269,7 @@ aside .subject-list ul li {
 		border-radius: 40px;
 		box-shadow: #bbb 1px 1px 5px;
 		transition: 0.4s;
+		cursor: pointer;
 	}
 
 	aside.mobile-viewable-nav #mobile-exit p {

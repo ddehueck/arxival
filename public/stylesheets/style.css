@@ -32,13 +32,9 @@ a:hover {
 	font-size: 12px;
 	background: transparent;
 	padding: 2px 8px;
-	margin: 0 5px;
+	margin: 5px 5px 5px 0;
 	border-radius: 20px;
 	border: 1px solid #bbb;
-}
-
-.subjects a:first-child {
-	margin-left: 0;
 }
 
 .subjects a:hover {
@@ -64,7 +60,7 @@ a:hover {
 
 .paper-info h3 {
 	font-weight: 500;
-	margin: 5px 0 10px 0;
+	margin: 5px 0;
 }
 
 .paper-info h3 a {
@@ -243,6 +239,7 @@ aside .subject-list ul li {
 		transition: 0.4s;
 		border-radius: 0;
     overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
     overflow-x:hidden;
 	}
 

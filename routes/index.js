@@ -7,13 +7,14 @@ var UserAuth = require('../lib/user-auth.js');
 router.get('/', function(req, res, next) {
 	///:id?prefix=cs.AI&sortBy=submittedDate&sortOrder=descending&maxResults=25&start=0
 	var subjectId = 'all';
-	var pageNum = req.query.page - 1; // Zero indexed
+	var pageNum = req.query.page;
 	
 	arxiv.getSubjectsPapers(subjectId, pageNum, req.query, function(err, papers) {
 		res.render('index', {
 			isAuthenticated: req.session.isAuthenticated,
 			title: "arxival",
 			papers: papers,
+			pageNum: pageNum,
 			error: err,
 		});
 	});

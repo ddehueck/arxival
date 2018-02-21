@@ -1,0 +1,16 @@
+if !pageNum
+		-pageNum = 1
+
+-var nextPage = parseInt(pageNum) + 1
+-var prevPage = parseInt(pageNum) - 1
+		
+.pagination
+	if subjectId
+		if pageNum != 1
+			a(class="page-button" href='/subjects/' + subjectId + '?page=' + prevPage) Previous
+		a(class="page-button" href='/subjects/' + subjectId + '?page=' + nextPage) Next
+	else
+		//- Assume it's the home page
+		if pageNum != 1
+			a(class="page-button" href='/?page=' + prevPage) Previous
+		a(class="page-button" href='/?page=' + nextPage) Next

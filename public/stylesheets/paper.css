@@ -1,3 +1,7 @@
+section.paper {
+	margin-bottom: 35px;
+}
+
 .top-info {
 	display: flex;
 	justify-content: space-between;
@@ -9,6 +13,7 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .top-info .dates p {
@@ -57,12 +62,8 @@
 	color: #fff;
 	background: #bbb;
 	padding: 6px 10px;
-	margin: 5px;
+	margin: 5px 5px 5px 0;
 	border-radius: 5px;
-}
-
-.authors a:first-child {
-	margin-left: 0;
 }
 
 .abstract p {

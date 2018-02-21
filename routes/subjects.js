@@ -8,7 +8,7 @@ var topicNames = require('../lib/topic-names.js');
 router.get('/:id', function(req, res, next) {
 	///:id?prefix=cs.AI&sortBy=submittedDate&sortOrder=descending&maxResults=25&start=0
 	var subjectId = req.params.id;
-	var pageNum = req.query.page;
+	var pageNum = req.query.page; // Adjust for zero index
 	
 	arxiv.getSubjectsPapers(subjectId, pageNum, req.query, function(err, papers) {
 		if (req.session.isAuthenticated) {
@@ -86,7 +86,7 @@ router.post('/:id/remove', function(req, res, next) {
 
 router.get('/:id/html', function(req, res, next) {
 	var subjectId = req.params.id;
-	var pageNum = req.query.pageNum - 1; // 0 indexed
+	var pageNum = req.query.pageNum;
 
 	arxiv.getSubjectsPapers(subjectId, pageNum, req.query, function(err, papers) {
 		res.render('components/feed', {

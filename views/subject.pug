@@ -19,16 +19,7 @@ block content
 			
 		include ./components/feed.pug
 
-		if !pageNum
-			-pageNum = 1
-
-		-var nextPage = parseInt(pageNum) + 1
-		-var prevPage = parseInt(pageNum) - 1
-		
-		.pagination
-			if pageNum != 1
-				a(class="page-button" href='/subjects/' + subjectId + '?page=' + prevPage) Previous
-			a(class="page-button" href='/subjects/' + subjectId + '?page=' + nextPage) Next
+		include ./components/page-buttons.pug
 
 block scripts
 	script(src="/javascripts/ajax.js")

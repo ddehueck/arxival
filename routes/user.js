@@ -10,7 +10,7 @@ router.get('/feed', function(req, res, next) {
 		User.findOne({'username': req.session.username}, function(err, user) {
 			// Get first feed papers
 			var initialFeed = user.subjects[0];
-			arxiv.getSubjectsPapers(initialFeed, 0, req.query, function(err, papers) {
+			arxiv.getSubjectsPapers(initialFeed, 1, req.query, function(err, papers) {
 				if (!initialFeed) {
 					// No feeds added
 					err = {message: 'You have not subscribed to any feeds.'};

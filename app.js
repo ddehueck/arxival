@@ -20,11 +20,12 @@ var mongoose = require('mongoose');
 		connection_url += process.env.DB_USER + ':';
 		connection_url += process.env.DB_PSWD + '@localhost/';
 		connection_url += process.env.DB_NAME;
+		connection_url += '?authSource=admin';
 	} else {
 		connection_url += 'localhost:27017/arxival-test';
 	}
-	console.log(connection_url);
-	mongoose.connect(connection_url, {auth:{authdb:"admin"}});
+
+	mongoose.connect(connection_url);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -49,12 +50,13 @@ var sess = {
   saveUninitialized: true,
 }
 
-app.use(session(sess));
-
 if (process.env.NODE_ENV === 'production') {
-  app.set('trust proxy', 1); // trust first proxy
-  sess.cookie.secure = true; // serve secure cookies
+  // TODO: Use secure cookies?
+  //app.set('trust proxy', 1); // trust first proxy
+  //sess.cookie.secure = true; // serve secure cookies
 }
+
+app.use(session(sess));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -66,6 +68,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);

@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var Dotenv = require('dotenv').config()
+var Dotenv = require('dotenv').config();
 
 var index = require('./routes/index');
 var user = require('./routes/user');
@@ -48,7 +48,7 @@ var sess = {
   cookie: {maxAge: 5184000},
   resave: false,
   saveUninitialized: true,
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
   // TODO: Use secure cookies?

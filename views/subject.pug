@@ -1,0 +1,49 @@
+extends layout
+
+block stylesheets
+	link(rel="stylesheet", href="/stylesheets/subject.css")
+
+block content
+	section.papers#subject-feed
+		.subject-heading
+			.heading
+				h1 #{subjectName} - #{subjectId}
+			.subscribe
+				if isInFeed
+					a(href="#" id="action" class="unsubscribe") Unsubscribe from #{subjectId}
+				else
+					a(href="#" id="action" class="subscribe") Subscribe to #{subjectId}
+		
+		if error
+			p #{error.message}
+			
+		include ./components/feed.pug
+
+		if !pageNum
+			-pageNum = 1
+
+		-var nextPage = parseInt(pageNum) + 1
+		-var prevPage = parseInt(pageNum) - 1
+		
+		.pagination
+			if pageNum != 1
+				a(class="page-button" href='/subjects/' + subjectId + '?page=' + prevPage) Previous
+			a(class="page-button" href='/subjects/' + subjectId + '?page=' + nextPage) Next
+
+block scripts
+	script(src="/javascripts/ajax.js")
+	script(src="/javascripts/actions/subject.js")
+	script.
+		var subjectId = "#{subjectId}";
+		
+		var actionButton = document.getElementById("action");
+		var baseUrl = window.location.pathname
+
+		actionButton.addEventListener('click', function(event) {
+			if (actionButton.className == 'subscribe'){
+				subscribe(baseUrl + '/save', actionButton, subjectId);
+			
+			} else if (actionButton.className == 'unsubscribe') {
+				unsubscribe(baseUrl + '/remove', actionButton, subjectId)
+			}
+		});

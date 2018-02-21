@@ -1,0 +1,14 @@
+extends ../simple-layout
+
+block stylesheets
+	link(rel="stylesheet", href="/stylesheets/user/library.css")
+
+block content
+	section.library
+		h2 Your Library
+		if error
+			p #{error.message}
+		include ../components/feed.pug
+
+block scripts
+	include ../components/mathjax-scripts.pug

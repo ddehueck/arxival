@@ -1,0 +1,25 @@
+extends ../simple-layout
+
+block stylesheets
+	link(rel="stylesheet", href="/stylesheets/user/feed.css")
+
+block content
+	section
+		.feed-heading
+			h2#feed-heading Showing: #{initialFeed}
+		#feed
+			if error
+				p #{error.message}
+			
+			include ../components/feed.pug
+	aside.feed-links
+		h3 Click on a subject to change feed:
+		.subjects#subjects
+			if user.subjects
+				each subject in user.subjects
+					a(href="#") #{subject}
+
+block scripts
+	script(src="/javascripts/ajax.js")
+	script(src="/javascripts/actions/user/feed.js")
+	include ../components/mathjax-scripts.pug

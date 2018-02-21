@@ -1,0 +1,12 @@
+extends simple-layout
+
+block stylesheets
+	link(rel="stylesheet", href="/stylesheets/login-register.css")
+
+block content
+	section.login
+		form(action="/login" method="post")
+			input(type="text" name="usernameOrEmail" placeholder="Username or Email" required)
+			input(type="password" name="password" placeholder="Password" required)
+			button(type="submit") Login
+		a.option(href="/register") Don't have an account? Register here.

@@ -1,0 +1,33 @@
+doctype html
+html
+	head
+		title= title
+		meta(name='viewport', content='width=device-width')
+		link(href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,700,900', rel='stylesheet')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		block stylesheets
+
+	body
+		header
+			.container
+				.heading
+					h1: a(href="/") Arxival
+				.links
+					include ./components/header-links.pug
+		main
+			//- content must be a section that encapsulates everything within it
+			block content
+			aside
+				#mobile-exit
+					p exit
+				.search-bar
+					form(action="/search" method="get")
+						Input(type="search" placeholder="Search" name="q" required)
+						button(type="submit") Submit
+				include ./components/topics.pug
+		
+		block scripts
+		script(src="/javascripts/nav.js")
+		include ./components/mathjax-scripts.pug
+		
+

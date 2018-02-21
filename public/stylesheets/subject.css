@@ -1,0 +1,31 @@
+.subject-heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.subject-heading .heading h1 {
+	text-transform: uppercase;
+	margin: 0;
+	font-size: 1.8em;
+}
+
+.subscribe, .unsubscribe {
+	margin: 10px 0
+}
+
+.subject-heading .subscribe a, .subject-heading .unsubscribe a {
+	background: transparent;
+	border: 1px solid #7a7a7a;
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	color: #7a7a7a;
+	font-size: 12px;
+}
+
+.subject-heading .subscribe a:hover, .subject-heading .unsubscribe a:hover {
+	border: 1px solid #b31b1b;
+	color: #b31b1b;
+}

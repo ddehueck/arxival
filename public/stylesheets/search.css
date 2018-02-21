@@ -1,0 +1,56 @@
+/* For Search Page */
+
+section.search {
+	margin: 0px 40px;
+}
+
+.heading h2 {
+	margin: 15px 0;
+}
+
+form .top-bar {
+	display: flex;
+	margin-bottom: 15px;
+}
+
+form .top-bar input[type="search"] {
+	flex: 1;
+	color: #747474;
+	border: none;
+	background: #dbd9d9;
+	border: 1px solid #cbc8c8;;
+	padding: 5px 10px;
+	outline: none;
+}
+
+form .top-bar button {
+	background: transparent;
+	border: 1px solid #cbc8c8;
+	border-left: none;
+	color: #6c6c6c;
+	outline: none;
+}
+
+form .top-bar button:hover {
+	background: #cbc8c8;
+	color: #fff;
+}
+
+form .options .drop-downs {
+	display: flex;
+	align-items: center;
+}
+
+form .options .drop-downs p {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+form .options .drop-downs  select {
+	margin: 0 10px;
+}
+
+aside .search-bar {
+	display: none;
+}

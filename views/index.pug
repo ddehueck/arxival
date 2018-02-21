@@ -1,0 +1,15 @@
+extends layout
+
+block stylesheets
+	link(rel="stylesheet", href="/stylesheets/subject.css")
+
+block content
+	section.papers
+		.subject-heading
+			.heading
+				h1 Welcome to Arxival
+		
+		if error
+			p #{error.message}
+		
+		include ./components/feed.pug

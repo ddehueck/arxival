@@ -1,0 +1,6 @@
+.paper-info
+	p.published-date #{paper.publishedDate}
+	h3: a(href="/papers/" + paper.id) #{paper.title}
+	.subjects
+		each subject in paper.subjects
+			a(href="/subjects/" + subject) #{subject}

@@ -1,0 +1,77 @@
+section.paper {
+	margin: 30px 40px;
+	flex: 1;
+}
+
+.top-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.top-info .dates {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.top-info .dates p {
+	margin: 0;
+}
+
+.top-info .dates p:first-child {
+	margin-right: 15px;
+}
+
+.top-info .links {
+	margin: 15px 0;
+}
+
+.top-info .links a {
+	margin-right: 15px;
+	background: transparent;
+	border: 1px solid #7a7a7a;
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	color: #7a7a7a;
+	font-size: 12px;
+}
+
+.top-info .links a:hover {
+	border: 1px solid #b31b1b;
+	color: #b31b1b;
+}
+
+.title h1 {
+	font-size: 1.8em;
+	font-weight: 500;
+	margin: 10px 0;
+}
+
+.authors {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.authors a {
+	display: block;
+	color: #fff;
+	background: #bbb;
+	padding: 6px 10px;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+.authors a:first-child {
+	margin-left: 0;
+}
+
+.abstract p {
+	margin: 25px 0;
+	font-size: 16px;
+	line-height: 25px;
+}

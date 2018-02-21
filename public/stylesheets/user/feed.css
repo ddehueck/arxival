@@ -1,0 +1,46 @@
+main {
+	display: flex;
+	justify-content: space-between;
+}
+
+#feed-heading {
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+aside {
+	border: none;
+}
+
+aside h3 {
+	font-size: 16px;
+	font-weight: 500;
+	margin: 10px 0 0 0;
+}
+
+aside .subjects a {
+	border-radius: 3px;
+	padding: 5px 10px;
+	margin-top: 10px;
+}
+
+@media screen and (max-width: 1040px) {
+	main {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	aside.feed-links {
+		margin: 0 35px 10px 35px;
+		position: inherit;
+    padding: inherit;
+    bottom: inherit;
+    right: inherit;
+    background: inherit;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    box-shadow: inherit;
+    transition: 0.4s;
+	}
+}

@@ -1,0 +1,44 @@
+extends layout
+
+block stylesheets
+	link(rel="stylesheet", href="/stylesheets/paper.css")
+
+block content
+	section.paper
+		.top-info
+			.dates
+				p Published: #{paper.publishedDate}
+				p Last Updated: #{paper.updatedDate}
+			.links
+				if isInLibrary
+					a(href="#" id="action" class="remove-paper") Remove Paper From Library
+				else
+					a(href="#" id="action" class="save-paper") Save Paper To Library
+
+				a(href=paper.pdfLink target="_blank" rel="noopener noreferrer") PDF Link
+		.title
+			h1 #{paper.title}
+		.authors
+			each author in paper.authors
+				a(href="/search?q=au:" + author) #{author}
+		.abstract
+			p #{paper.abstract}
+		.subjects
+			each subject in paper.subjects
+				a(href="/subjects/" + subject) #{subject}
+
+block scripts
+	script(src="/javascripts/ajax.js")
+	script(src="/javascripts/actions/paper.js")
+	script.
+		var actionButton = document.getElementById("action");
+		var baseUrl = window.location.pathname
+
+		actionButton.addEventListener('click', function(event) {
+			if (actionButton.className == 'save-paper'){
+				addPaper(baseUrl + '/save', actionButton);
+			
+			} else if (actionButton.className == 'remove-paper') {
+				removePaper(baseUrl + '/remove', actionButton)
+			}
+		});

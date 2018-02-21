@@ -1,0 +1,37 @@
+extends layout
+
+block stylesheets
+	link(rel="stylesheet", href="/stylesheets/search.css")
+
+block content
+	section.search
+		.search-bar
+			form(action="/search" method="get")
+				.top-bar
+					input(type="search" placeholder="Search" name="q" required)
+					button(type="submit") Submit
+				.options
+					p Additional Search Options:
+					.drop-downs
+						p Sort By:
+						select(name="sortBy")
+							option(value="relevance" selected="selected") Relevance
+							option(value="submittedDate") Submitted Date
+							option(value="lastUpdatedDate") Last Updated Date
+						
+						p Sort Order:
+						select(name="sortOrder")
+							option(value="descending" selected="selected") Descending
+							option(value="ascending") Ascending
+
+		.heading 
+			h2 Showing results for: #{query}
+		.search-results
+			if error
+				p There was an error: #{error.message}
+			
+			include ./components/feed.pug
+
+
+block scripts
+	

@@ -18,13 +18,14 @@ html
 			//- content must be a section that encapsulates everything within it
 			block content
 			aside
-				#mobile-exit
-					p exit
-				.search-bar
-					form(action="/search" method="get")
-						Input(type="search" placeholder="Search" name="q" required)
-						button(type="submit") Submit
-				include ./components/topics.pug
+				a#mobile-nav-click
+					a#mobile-exit
+						p exit
+					.search-bar
+						form(action="/search" method="get")
+							Input(type="search" placeholder="Search" name="q" required)
+							button(type="submit") Submit
+					include ./components/topics.pug
 		
 		block scripts
 		script(src="/javascripts/nav.js")

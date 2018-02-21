@@ -172,6 +172,10 @@ aside #mobile-exit {
 	display: none;
 }
 
+aside a#mobile-nav-click {
+	display: none;
+}
+
 aside .subject-list ul {
 	list-style: none;
 	padding: 0;
@@ -216,6 +220,13 @@ aside .subject-list ul li {
 		transition: 0.4s;
 	}
 
+	aside a#mobile-nav-click {
+		display: block;
+		width: 60px;
+		height: 60px;
+		border-radius: 40px;
+	}
+
 	aside .search-bar, aside .subject-list {
 		display: none;
 	}
@@ -233,6 +244,10 @@ aside .subject-list ul li {
 	}
 
 	aside.mobile-viewable-nav:after {
+		display: none;
+	}
+
+	aside.mobile-viewable-nav a#mobile-nav-click {
 		display: none;
 	}
 

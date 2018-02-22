@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
 	arxiv.search(query, req.query, function(err, papers) {
 		console.log(err);
 		res.render('search', {
+			title: 'Arxival - Search',
 			isAuthenticated: req.session.isAuthenticated,
 			query: query,
 			papers: papers,

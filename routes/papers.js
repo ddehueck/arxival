@@ -19,6 +19,7 @@ router.get('/:id', function(req, res, next) {
 					var isInLibrary = user.library.includes(paperId);
 					
 					res.render('paper', {
+						title: "Arxival - " + paper.title, 
 						isAuthenticated: req.session.isAuthenticated,
 						paper: paper,
 						isInLibrary: isInLibrary,
@@ -26,6 +27,7 @@ router.get('/:id', function(req, res, next) {
 				});
 			} else {
 				res.render('paper', {
+					title: "Arxival - " + paper.title, 
 					isAuthenticated: req.session.isAuthenticated,
 					paper: paper,
 					isInLibrary: false,

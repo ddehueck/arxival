@@ -17,6 +17,12 @@ a:hover {
 	color: #b31b1b;
 }
 
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
 /*----------------------
  Multiple Page Elements
 ----------------------*/
@@ -161,7 +167,7 @@ section {
 
 aside {
 	width: 305px;
-  padding: 0 35px;
+	padding: 0 35px;
 }
 
 aside #mobile-exit {
@@ -189,7 +195,7 @@ aside .subject-list ul li {
 
 @media screen and (max-width: 1040px) {
 	section {
-    margin: 0 35px;
+		margin: 0 35px;
 	}
 
 	aside {
@@ -238,9 +244,9 @@ aside .subject-list ul li {
 		height: 100vh;
 		transition: 0.4s;
 		border-radius: 0;
-    overflow-y:scroll;
-    -webkit-overflow-scrolling: touch;
-    overflow-x:hidden;
+		overflow-y:scroll;
+		-webkit-overflow-scrolling: touch;
+		overflow-x:hidden;
 	}
 
 	aside.mobile-viewable-nav:after {
@@ -255,7 +261,7 @@ aside .subject-list ul li {
 	aside.mobile-viewable-nav #mobile-exit {
 		display: flex;
 		align-items: center;
-    justify-content: center;
+		justify-content: center;
 		position: fixed;
 		padding: 0;
 		bottom: 15px;

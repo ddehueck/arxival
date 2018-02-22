@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 	arxiv.getSubjectsPapers(subjectId, pageNum, req.query, function(err, papers) {
 		res.render('index', {
 			isAuthenticated: req.session.isAuthenticated,
-			title: "arxival",
+			title: "Arxival",
 			papers: papers,
 			pageNum: pageNum,
 			error: err,
@@ -38,6 +38,7 @@ router.post('/register', function(req, res, next) {
 			res.redirect('/user/feed');
 		} else {
 			res.render('register', {
+				title: "Arxival - Register", 
 				error: err,
 				username: username,
 				email: email
@@ -47,11 +48,15 @@ router.post('/register', function(req, res, next) {
 });
 
 router.get('/register', function(req, res, next) {
-	res.render('register', {});
+	res.render('register', {
+				title: "Arxival - Register", 
+			});
 });
 
 router.get('/login', function(req, res, next) {
-	res.render('login', {error: false});
+	res.render('login', {
+		title: "Arxival - Register", 
+	});
 });
 
 router.post('/login', function(req, res, next) {

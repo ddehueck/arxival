@@ -18,6 +18,7 @@ router.get('/feed', function(req, res, next) {
 				}
 
 				res.render('user/feed', {
+					title: ("Arxival - " + user.username + "'s Feed"),
 					isAuthenticated: req.session.isAuthenticated,
 					user: user,
 					papers: papers,
@@ -38,6 +39,7 @@ router.get('/library', function(req, res, next) {
 		User.findOne({'username': req.session.username}, function(err, user) {
 			arxiv.getPapersFromList(user.library, function(err, papers) {
 				res.render('user/library', {
+					title: ("Arxival - " + user.username + "'s Library"),
 					isAuthenticated: req.session.isAuthenticated,
 					user: user,
 					papers: papers,

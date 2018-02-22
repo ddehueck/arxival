@@ -17,6 +17,7 @@ router.get('/:id', function(req, res, next) {
 				var isInFeed = user.subjects.includes(subjectId);
 					
 				res.render('subject', {
+					title: "Arxival - " + topicNames.getTopicName(subjectId), 
 					isAuthenticated: req.session.isAuthenticated,
 					papers: papers,
 					subjectId: subjectId,
@@ -28,6 +29,7 @@ router.get('/:id', function(req, res, next) {
 			});
 		} else {
 			res.render('subject', {
+				title: "Arxival - " + topicNames.getTopicName(subjectId), 
 				isAuthenticated: req.session.isAuthenticated,
 				papers: papers,
 				subjectId: subjectId,

@@ -96,7 +96,7 @@ aside .search-bar form input[type="search"] {
 aside .search-bar form button {
 	background: transparent;
 	border: 1px solid #cbc8c8;
-	border-left: none;
+	margin-left: 1px;
 	color: #6c6c6c;
 	outline: none;
 }

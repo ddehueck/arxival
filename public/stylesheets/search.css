@@ -16,7 +16,6 @@ form .top-bar {
 form .top-bar input[type="search"] {
 	flex: 1;
 	color: #747474;
-	border: none;
 	background: #dbd9d9;
 	border: 1px solid #cbc8c8;;
 	padding: 5px 10px;
@@ -26,7 +25,7 @@ form .top-bar input[type="search"] {
 form .top-bar button {
 	background: transparent;
 	border: 1px solid #cbc8c8;
-	border-left: none;
+	margin-left: 1px;
 	color: #6c6c6c;
 	outline: none;
 }
